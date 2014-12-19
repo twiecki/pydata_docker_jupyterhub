@@ -12,6 +12,7 @@ ENV PATH /opt/miniconda/bin:$PATH
 RUN chmod -R a+rx /opt/miniconda
 
 # Install PyData modules and IPython dependencies
+RUN conda update conda
 RUN conda install numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy
 
 # Set up IPython kernel
