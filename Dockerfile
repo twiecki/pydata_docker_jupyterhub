@@ -23,3 +23,4 @@ RUN python2 -m IPython kernelspec install-self --system
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN conda clean -y -t
+RUN rm /root/conda_install.sh
