@@ -2,7 +2,7 @@ FROM jupyter/jupyterhub
 
 MAINTAINER Thomas Wiecki <thomas.wiecki@gmail.com>
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget libsm6
 
 # Install miniconda
 RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
@@ -23,3 +23,6 @@ RUN python2 -m IPython kernelspec install-self --system
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN conda clean -y -t
+
+# Test
+RUN python -c "import numpy, scipy, pandas, matplotlib, matplotlib.pyplot, sklearn, seaborn, statsmodels, theano"
