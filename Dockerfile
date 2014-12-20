@@ -2,7 +2,7 @@ FROM jupyter/jupyterhub
 
 MAINTAINER Thomas Wiecki <thomas.wiecki@gmail.com>
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y wget
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libsm6 libxrender1 libfontconfig1
 
 # Install miniconda
 RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
@@ -13,7 +13,7 @@ RUN chmod -R a+rx /opt/miniconda
 
 # Install PyData modules and IPython dependencies
 RUN conda update --quiet --yes conda && \
-    conda install --quiet --yes system numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy
+    conda install --quiet --yes numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy
 
 # Set up IPython kernel
 RUN pip install file:///srv/ipython && \
