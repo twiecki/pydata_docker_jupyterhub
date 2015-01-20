@@ -18,7 +18,7 @@ RUN conda update --quiet --yes conda && \
 # Set up IPython kernel
 RUN pip install file:///srv/ipython && \
     rm -rf /usr/local/share/ipython/kernels/* && \
-    python2 -m IPython kernelspec install-self --system
+    python2 -m IPython kernelspec install-self
 
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
