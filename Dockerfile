@@ -5,7 +5,7 @@ MAINTAINER Thomas Wiecki <thomas.wiecki@gmail.com>
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libsm6 libxrender1 libfontconfig1
 
 # Install miniconda
-RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
+RUN wget --quiet https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh && \
     bash Miniconda-latest-Linux-x86_64.sh -b -p /opt/miniconda && \
     rm Miniconda-latest-Linux-x86_64.sh
 ENV PATH /opt/miniconda/bin:$PATH
