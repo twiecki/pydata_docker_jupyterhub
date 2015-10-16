@@ -13,7 +13,7 @@ RUN chmod -R a+rx /opt/miniconda3
 
 # Install PyData modules and IPython dependencies
 RUN conda update --quiet --yes conda && \
-    conda install --quiet --yes numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy ipython
+    conda install --quiet --yes numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy ipython jupyterhub
 
 # Set up IPython kernel
 RUN rm -rf /usr/local/share/jupyter/kernels/* && \
