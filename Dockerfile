@@ -16,8 +16,7 @@ RUN conda update --quiet --yes conda && \
     conda install --quiet --yes numpy scipy pandas matplotlib cython pyzmq scikit-learn seaborn six statsmodels theano pip tornado jinja2 sphinx pygments nose readline sqlalchemy ipython
 
 # Set up IPython kernel
-RUN pip install file:///srv/jupyterhub && \
-    rm -rf /usr/local/share/jupyter/kernels/* && \
+RUN rm -rf /usr/local/share/jupyter/kernels/* && \
     python -m IPython kernelspec install-self
 
 # Clean up
