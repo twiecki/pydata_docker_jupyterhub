@@ -2,7 +2,7 @@ FROM jupyter/jupyterhub
 
 MAINTAINER Thomas Wiecki <thomas.wiecki@gmail.com>
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libsm6 libxrender1 libfontconfig1
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget libsm6 libxrender1 libfontconfig1 libglib2.0-0
 
 # Install miniconda
 RUN wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
